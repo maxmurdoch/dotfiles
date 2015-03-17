@@ -2,7 +2,7 @@ autoload -U compinit
 autoload zmv
 compinit
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
-
+bindkey '^R' history-incremental-search-backward # command R works under tmux
 export DOTFILES="$HOME/dotfiles"
 
 source $DOTFILES/secret
