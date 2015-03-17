@@ -48,3 +48,4 @@ HISTFILE=$HOME/.zhistory
 HISTSIZE=20000
 SAVEHIST=20000
 setopt HIST_IGNORE_SPACE
+source /usr/local/opt/autoenv/activate.sh

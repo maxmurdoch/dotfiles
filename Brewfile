@@ -10,6 +10,7 @@ install gnu-sed --default-names
 install git
 install hub
 install macvim --override-system-vim
+install autoenv
 install rbenv
 install redis
 install imagemagick
