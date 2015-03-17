@@ -9,10 +9,11 @@ symlinks:
 	@ln -sf $(PWD)/tmux.conf ~/.tmux.conf
 	@ln -sf $(PWD)/gitconfig ~/.gitconfig
 	@ln -sf $(PWD)/gitexcludes ~/.gitexcludes
-	@echo "Step 2: 'make vundle'"
+	@echo "Step 2: 'make plug'"
 
-vundle:
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+plug:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@echo "Step 3: 'make brew'"
 
 brew: Brewfile
