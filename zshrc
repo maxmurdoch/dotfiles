@@ -9,6 +9,7 @@ source $DOTFILES/secret
 
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
+source $DOTFILES/zsh/completion/t-completion.zsh
 source $DOTFILES/zsh/plugins/safe-paste.zsh
 source $DOTFILES/zsh/pure.zsh
 
