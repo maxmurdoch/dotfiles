@@ -10,9 +10,10 @@ source $DOTFILES/secret
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/completion/t-completion.zsh
+source $DOTFILES/zsh/completion/tmuxinator.zsh
 source $DOTFILES/zsh/plugins/safe-paste.zsh
 source $DOTFILES/zsh/pure.zsh
-
+source /usr/local/opt/autoenv/activate.sh
 
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
@@ -44,8 +45,11 @@ export MYVIMRC="$HOME/.vimrc"
 export EDITOR='vim'
 export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
 
+################
+#   SETTINGS   #
+################
+
 HISTFILE=$HOME/.zhistory
 HISTSIZE=20000
 SAVEHIST=20000
 setopt HIST_IGNORE_SPACE
-source /usr/local/opt/autoenv/activate.sh
