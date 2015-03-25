@@ -45,6 +45,4 @@ cask install iterm2
 cask install alfred
 cask install sublime-text
 
-cask alfred link
-
 cleanup
