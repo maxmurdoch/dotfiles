@@ -1,5 +1,5 @@
 # Misc
-alias v="vi"
+alias v="nvim"
 alias irb="irb --simple-prompt"
 alias pry="pry --simple-prompt"
 alias grep="grep --color"

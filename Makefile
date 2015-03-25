@@ -5,7 +5,9 @@ symlinks:
 	@ln -nsf $(PWD)/zshenv ~/.zshenv
 	@ln -nsf $(PWD)/zshrc ~/.zshrc
 	@ln -nsf $(PWD)/vim  ~/.vim
+	@ln -nsf $(PWD)/nvim  ~/.nvim
 	@ln -nsf $(PWD)/vimrc  ~/.vimrc
+	@ln -nsf $(PWD)/nvimrc  ~/.nvimrc
 	@ln -sf $(PWD)/tmux.conf ~/.tmux.conf
 	@ln -sf $(PWD)/gitconfig ~/.gitconfig
 	@ln -sf $(PWD)/gitexcludes ~/.gitexcludes

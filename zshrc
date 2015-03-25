@@ -29,6 +29,7 @@ export PATH="$HOME/.node_modules:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="node_modules/.bin:$PATH"
 export PATH=".bundle/binstubs:$PATH"
+export PATH="./bin:$PATH"
 
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
