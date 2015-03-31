@@ -70,12 +70,12 @@ set statusline+=\ %f\
 
 " ## Text Display
 " --------------------
+set t_Co=256
+let base16colorspace=256
+colorscheme base16-flat
+set background=light
 syntax on
 syntax enable
-set t_Co=256
-set background=dark
-" let g:solarized_termtrans = 1
-colorscheme base16-flat
 set cursorline " highlight current row
 set scrolloff=5 " Breaks lines at punctuation if possible
 set linebreak " Shows last line instead of @ symbols
