@@ -40,6 +40,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export NODE_PATH="/usr/lib/node_modules"
 export MYVIMRC="$HOME/.vimrc"
+export TERM=xterm-256color
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -54,3 +55,11 @@ HISTFILE=$HOME/.zhistory
 HISTSIZE=20000
 SAVEHIST=20000
 setopt HIST_IGNORE_SPACE
+#
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+## Nvm
+export NVM_DIR="/Users/maxmurdoch/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

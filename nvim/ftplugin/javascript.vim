@@ -1,1 +1,1 @@
-match Error '\%>100v.\+' " :help match
+match Error '\%>120v.\+' " :help match

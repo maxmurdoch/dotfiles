@@ -73,7 +73,8 @@ set statusline+=\ %f\
 set t_Co=256
 let base16colorspace=256
 colorscheme base16-flat
-set background=light
+set textwidth=90
+set background=dark
 syntax on
 syntax enable
 set cursorline " highlight current row
@@ -87,6 +88,8 @@ set number " show numbers
 set relativenumber " show line numbers relative to highlighted row
 set lazyredraw
 let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_args = '--config .eslint/.eslintrc-main --ignore-path .eslint/.eslintignore-main'
 let g:syntastic_mode_map = { "mode": "passive",
                             \ "active_filetypes": ["javascript", "ruby"] }
 
@@ -142,6 +145,7 @@ set shiftwidth=2
 " ## Mapleader
 " --------------------
 " Ctrl-m -> writes file to disk, runs Make command of vim-dispatch
+let mapleader=','
 map <C-m> <esc>:w<CR>:Make<CR>
 map <leader>rld :source $MYVIMRC<CR> " Reloads .vimrc file
 " Toggle split between horizontal or vertical
