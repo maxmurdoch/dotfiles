@@ -1,7 +1,6 @@
 .DS_store
 *.swp
 .env
-*.nvmrc
 Session.vim
 tags
 trello

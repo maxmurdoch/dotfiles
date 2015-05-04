@@ -1,10 +1,11 @@
 # Misc
-alias v="vi"
+alias {v,vi,vim}="nvim"
 alias irb="irb --simple-prompt"
 alias pry="pry --simple-prompt"
 alias grep="grep --color"
 alias clr="clear"
 alias df="cd ~/dotfiles"
+alias groot="cd $(git rev-parse --show-toplevel)"
 alias ctags=/usr/local/bin/ctags
 
 # `ls`
@@ -12,6 +13,7 @@ alias {l,ls}="ls --color=tty"
 
 # Git
 alias g="git"
+alias git="hub"
 
 alias gst="git status -sb"
 alias gstl="git status"
