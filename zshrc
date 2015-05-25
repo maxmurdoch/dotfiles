@@ -63,3 +63,4 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
 ## Nvm
 export NVM_DIR="/Users/maxmurdoch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+stty -ixon

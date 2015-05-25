@@ -5,7 +5,6 @@ alias pry="pry --simple-prompt"
 alias grep="grep --color"
 alias clr="clear"
 alias df="cd ~/dotfiles"
-alias groot="cd $(git rev-parse --show-toplevel)"
 alias ctags=/usr/local/bin/ctags
 
 # `ls`
@@ -13,10 +12,9 @@ alias {l,ls}="ls --color=tty"
 
 # Git
 alias g="git"
-alias git="hub"
 
-alias gst="git status -sb"
-alias gstl="git status"
+alias gs="git status -sb"
+alias gst="git status"
 
 alias ga="git add"
 alias gaa="git add --all"
@@ -44,10 +42,14 @@ alias gds="git diff --staged"
 alias gl="git log --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit"
 alias glog="git log --oneline --decorate --color --graph"
 
-alias grm="git rm"
 alias gunstage="git reset HEAD"
 
 alias gt="git tag"
 
 # Hub
 alias hpr="hub pull-request"
+alias ghb="hub browse"
+
+# Bundle
+alias b="bundle install"
+

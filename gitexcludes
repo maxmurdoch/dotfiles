@@ -1,6 +1,6 @@
 .DS_store
 *.swp
 .env
-Session.vim
 tags
+Session.vim
 trello

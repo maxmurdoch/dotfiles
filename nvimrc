@@ -22,6 +22,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'gorkunov/smartpairs.vim'
   Plug 'jelera/vim-javascript-syntax'
   Plug 'junegunn/vim-easy-align'
+  Plug 'junegunn/goyo.vim'
   Plug 'kana/vim-textobj-user'
   Plug 'kien/ctrlp.vim'
   Plug 'leshill/vim-json'
@@ -88,8 +89,8 @@ set relativenumber " show line numbers relative to highlighted row
 set lazyredraw
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_mode_map = { "mode": "passive",
-                            \ "active_filetypes": ["javascript", "ruby"] }
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript", "ruby"] }
 
 " ## Search
 " --------------------
@@ -231,7 +232,8 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR> " bind K to grep word under cu
 
 
 " ## Ctrl P
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|bower_components\'
+set wildignore+=jspm_packages,node_modules
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|bower_components'
 let g:ctrlp_extensions = ['tag']
 
 " ## NERDTree
