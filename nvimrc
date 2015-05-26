@@ -144,7 +144,6 @@ set shiftwidth=2
 " ## Mapleader
 " --------------------
 " Ctrl-m -> writes file to disk, runs Make command of vim-dispatch
-let mapleader=','
 map <C-m> <esc>:w<CR>:Make<CR>
 map <leader>rld :source $MYVIMRC<CR> " Reloads .vimrc file
 " Toggle split between horizontal or vertical
@@ -157,10 +156,6 @@ map <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " ## Normal-mode Maps
 " --------------------
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 nmap <CR> *
 
 " ## Insert-mode Maps
@@ -212,7 +207,6 @@ set backspace=indent,eol,start
 set hidden
 " less escaping for regular expressions
 set magic
-" no swapfiles
 set noswapfile
 let g:html_indent_tags = 'li\|p'
 
@@ -250,7 +244,7 @@ let g:airline_right_sep=''
 
 " ## Rspec
 " use Dispatch from vim-rspec
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = 'Dispatch rspec {spec}'
 
 " mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>

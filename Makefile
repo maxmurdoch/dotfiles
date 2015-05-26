@@ -19,4 +19,6 @@ plug:
 	@echo "Step 3: 'make brew'"
 
 brew: Brewfile
+	brew tap Homebrew/bundle
+	brew install caskroom/cask/brew-cask
 	brew bundle Brewfile
