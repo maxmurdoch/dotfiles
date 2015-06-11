@@ -53,3 +53,5 @@ alias ghb="hub browse"
 # Bundle
 alias b="bundle install"
 
+# tmux
+alias tns="tmux new-session -s"

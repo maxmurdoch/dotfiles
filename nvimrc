@@ -11,8 +11,9 @@ filetype off
 call plug#begin('~/.nvim/plugged')
   Plug '1995eaton/vim-better-css-completion'
   Plug '1995eaton/vim-better-javascript-completion'
-  Plug 'altercation/vim-colors-solarized'
   Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'airblade/vim-gitgutter'
   Plug 'benmills/vimux'
   Plug 'bling/vim-airline'
   Plug 'chriskempson/base16-vim'
@@ -21,14 +22,20 @@ call plug#begin('~/.nvim/plugged')
   Plug 'gmarik/Vundle.vim'
   Plug 'gorkunov/smartpairs.vim'
   Plug 'jelera/vim-javascript-syntax'
-  Plug 'junegunn/vim-easy-align'
   Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/vim-easy-align'
   Plug 'kana/vim-textobj-user'
   Plug 'kien/ctrlp.vim'
   Plug 'leshill/vim-json'
+  Plug 'mxw/vim-jsx'
   Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'othree/html5.vim'
   Plug 'pangloss/vim-javascript'
+  Plug 'reedes/vim-lexical'
+  Plug 'reedes/vim-litecorrect'
+  Plug 'reedes/vim-pencil'
+  Plug 'reedes/vim-textobj-quote'
+  Plug 'reedes/vim-wordy'
   Plug 'rking/ag.vim'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
@@ -40,6 +47,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-git'
   Plug 'tpope/vim-haml'
   Plug 'tpope/vim-markdown'
@@ -226,8 +234,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR> " bind K to grep word under cu
 
 
 " ## Ctrl P
-set wildignore+=jspm_packages,node_modules
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|bower_components'
+let g:ctrlp_custom_ignore = '\v.*(node_modules|DS_Store|bower_components|jspm_packages)$'
 let g:ctrlp_extensions = ['tag']
 
 " ## NERDTree
@@ -252,9 +259,26 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" ## writing plugins (http://usevim.com/2015/05/27/reedes/)
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd,textil,text call litecorrect#init()
+                                        \ | call textobj#quote#init()
+augroup END
+
 " ## vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" jsx
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_check_on_wq = 0

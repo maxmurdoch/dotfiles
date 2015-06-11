@@ -32,10 +32,12 @@ cask 'dropbox'
 cask 'google-chrome'
 cask 'firefox'
 cask 'sketch'
+cask 'noizio'
 cask 'slack'
 cask 'vlc'
 cask 'flux'
 cask 'iterm2'
 cask 'alfred'
+cask 'sonos'
 
 # cleanup
