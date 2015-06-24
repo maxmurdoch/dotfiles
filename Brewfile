@@ -18,8 +18,11 @@ brew 'reattach-to-user-namespace'
 brew 'wget', args: ['enable-iri']
 brew 'unrar'
 brew 'tree'
+brew 'ctags'
 brew 'tmux'
 brew 'zsh'
+brew 'heroku-toolbelt'
+brew 'fzf', args: ['--HEAD']
 
 tap 'neovim/neovim'
 brew 'neovim', args: ['HEAD']

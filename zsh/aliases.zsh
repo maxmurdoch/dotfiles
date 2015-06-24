@@ -55,3 +55,7 @@ alias b="bundle install"
 
 # tmux
 alias tns="tmux new-session -s"
+alias tks="tmux kill-session -t"
+alias ta="tmux attach -t"
+alias tls="tmux ls"
+alias tds="tmux detach"
