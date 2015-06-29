@@ -1,8 +1,24 @@
 autoload -U compinit
 autoload zmv
 compinit
+# vi mode for zsh (http://dougblack.io/words/zsh-vi-mode.html)
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word # ctrl-w removed word backwards
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 bindkey '^R' history-incremental-search-backward # command R works under tmux
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+
 export DOTFILES="$HOME/dotfiles"
 
 source $DOTFILES/secret
@@ -14,6 +30,8 @@ source $DOTFILES/zsh/completion/tmuxinator.zsh
 source $DOTFILES/zsh/plugins/safe-paste.zsh
 source $DOTFILES/zsh/pure.zsh
 source /usr/local/opt/autoenv/activate.sh
+source $DOTFILES/zsh/opp.zsh
+source $DOTFILES/zsh/*.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
