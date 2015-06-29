@@ -23,8 +23,8 @@ call plug#begin('~/.nvim/plugged')
   Plug 'gorkunov/smartpairs.vim'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/vim-easy-align'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
   Plug 'kana/vim-textobj-user'
+  Plug 'kien/ctrlp.vim'
   Plug 'leshill/vim-json'
   Plug 'mxw/vim-jsx'
   Plug 'majutsushi/tagbar'
@@ -223,8 +223,19 @@ let g:html_indent_tags = 'li\|p'
 " # Plugin Settings
 " --------------------
 
-nnoremap <C-p> :FZF<CR>
+" ## Ag
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor " use ag instead of grep
+  let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching=0 " ag is fast enough not to need caching
+endif
+
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR> " bind K to grep word under cursor in normal mode
+
+
+" ## Ctrl P
+let g:ctrlp_custom_ignore = '\v.*(node_modules|DS_Store|bower_components|jspm_packages)$'
+let g:ctrlp_extensions = ['tag']
 
 " ## NERDTree
 " closes vim if NERDTree is the only remaining buffer
@@ -276,7 +287,5 @@ let g:syntastic_check_on_wq = 0
 let g:javascript_enable_domhtmlcss = 1
 
 " ctags & tagbar
+nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <silent> <leader>b :TagbarToggle<CR>
-
-" fzf
-nnoremap <silent> <Leader><Leader> :FZF -m<CR>
