@@ -1,5 +1,7 @@
 " # Plug
 " ========================================
+" temporarily fix fzf https://github.com/junegunn/fzf/issues/206#issuecomment-117241702
+let g:loaded_python_provider = 1
 
 " not vi compatible
 set nocompatible
@@ -236,6 +238,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR> " bind K to grep word under cu
 " ## Ctrl P
 let g:ctrlp_custom_ignore = '\v.*(node_modules|DS_Store|bower_components|jspm_packages)$'
 let g:ctrlp_extensions = ['tag']
+nnoremap <leader>. :CtrlPTag<CR>
 
 " ## NERDTree
 " closes vim if NERDTree is the only remaining buffer
