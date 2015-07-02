@@ -21,7 +21,6 @@ call plug#begin('~/.nvim/plugged')
   Plug 'chriskempson/base16-vim'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'ervandew/supertab'
-  Plug 'gmarik/Vundle.vim'
   Plug 'gorkunov/smartpairs.vim'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/vim-easy-align'
@@ -283,3 +282,4 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 " fzf
 nnoremap <silent> <Leader><Leader> :FZF -m<CR>
+let g:fzf_height = '20%'
