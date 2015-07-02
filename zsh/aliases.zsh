@@ -1,5 +1,5 @@
 # Misc
-alias {v,vi,vim}="nvim"
+alias {v,vi,vim}="vim"
 alias irb="irb --simple-prompt"
 alias pry="pry --simple-prompt"
 alias grep="grep --color"
@@ -21,6 +21,10 @@ alias gaa="git add --all"
 alias gap="git add -p"
 
 alias gb="git branch"
+lookup_branch() {
+  gco $(git branch | fzf-tmux -d 15)
+}
+alias gbs=lookup_branch
 
 alias gcl="git clone"
 
