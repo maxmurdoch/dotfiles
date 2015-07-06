@@ -1,7 +1,5 @@
 " # Plug
 " ========================================
-" temporarily fix fzf https://github.com/junegunn/fzf/issues/206#issuecomment-117241702
-let g:loaded_python_provider = 1
 
 " not vi compatible
 set nocompatible
@@ -14,7 +12,6 @@ call plug#begin('~/.nvim/plugged')
   Plug '1995eaton/vim-better-css-completion'
   Plug '1995eaton/vim-better-javascript-completion'
   Plug 'AndrewRadev/splitjoin.vim'
-  Plug 'altercation/vim-colors-solarized'
   Plug 'airblade/vim-gitgutter'
   Plug 'benmills/vimux'
   Plug 'bling/vim-airline'
@@ -71,6 +68,14 @@ call plug#end()
 " Filetype detection, indentation, conditional plugin use
 filetype plugin indent on
 
+" ## Colors
+" --------------------
+set t_Co=256
+let base16colorspace=256
+colorscheme base16-default
+set background=light
+highlight Normal ctermfg=grey ctermbg=grey
+
 " ## Status Line
 " --------------------
 set statusline=\ %t\
@@ -80,12 +85,12 @@ set statusline+=%=
 set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ %f\
 
+" ## Status Line
+" --------------------
+set fillchars+=vert:\ 
+
 " ## Text Display
 " --------------------
-set t_Co=256
-let base16colorspace=256
-colorscheme base16-flat
-set background=dark
 syntax on
 syntax enable
 set cursorline " highlight current row
@@ -95,13 +100,9 @@ set display+=lastline " New split panes are opening to the right and bottom
 set splitright
 set splitbelow
 set ruler " show the cursor position all the time
-set number " show numbers
 set relativenumber " show line numbers relative to highlighted row
 set lazyredraw
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript", "ruby"] }
+
 
 " ## Search
 " --------------------
@@ -268,6 +269,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_wq = 0
+let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript", "ruby"] }
 
 " vim-javascript
 let g:javascript_enable_domhtmlcss = 1

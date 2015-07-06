@@ -50,6 +50,10 @@ alias gunstage="git reset HEAD"
 
 alias gt="git tag"
 
+alias gr="git rebase"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
+
 # Hub
 alias hpr="hub pull-request"
 alias ghb="hub browse"

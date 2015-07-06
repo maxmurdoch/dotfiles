@@ -28,10 +28,9 @@ source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/completion/t-completion.zsh
 source $DOTFILES/zsh/completion/tmuxinator.zsh
 source $DOTFILES/zsh/plugins/safe-paste.zsh
-source $DOTFILES/zsh/pure.zsh
 source /usr/local/opt/autoenv/activate.sh
+source $DOTFILES/zsh/pure.zsh
 source $DOTFILES/zsh/opp.zsh
-source $DOTFILES/zsh/*.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
@@ -74,7 +73,7 @@ SAVEHIST=20000
 setopt HIST_IGNORE_SPACE
 #
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.light.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 ## Nvm
