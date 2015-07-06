@@ -9,6 +9,7 @@ symlinks:
 	@ln -nsf $(PWD)/vimrc  ~/.vimrc
 	@ln -nsf $(PWD)/nvimrc  ~/.nvimrc
 	@ln -nsf $(PWD)/ctags  ~/.ctags
+	@ln -nsf $(PWD)/config  ~/.config
 	@ln -sf $(PWD)/tmux.conf ~/.tmux.conf
 	@ln -sf $(PWD)/gitconfig ~/.gitconfig
 	@ln -sf $(PWD)/gitexcludes ~/.gitexcludes
