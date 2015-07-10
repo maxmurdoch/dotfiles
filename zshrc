@@ -28,9 +28,10 @@ source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/completion/t-completion.zsh
 source $DOTFILES/zsh/completion/tmuxinator.zsh
 source $DOTFILES/zsh/plugins/safe-paste.zsh
-source /usr/local/opt/autoenv/activate.sh
 source $DOTFILES/zsh/pure.zsh
+source /usr/local/opt/autoenv/activate.sh
 source $DOTFILES/zsh/opp.zsh
+source $DOTFILES/zsh/*.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 

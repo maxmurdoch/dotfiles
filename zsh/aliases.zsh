@@ -6,6 +6,7 @@ alias grep="grep --color"
 alias clr="clear"
 alias df="cd ~/dotfiles"
 alias ctags=/usr/local/bin/ctags
+alias k9="kill -9 "
 
 # `ls`
 alias {l,ls}="ls --color=tty"

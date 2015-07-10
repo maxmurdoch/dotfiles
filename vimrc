@@ -42,6 +42,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'takac/vim-hardtime'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'thoughtbot/vim-rspec'
+  Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-endwise'
@@ -70,18 +71,15 @@ filetype plugin indent on
 
 " ## Colors
 " --------------------
-set t_Co=256
 let base16colorspace=256
-colorscheme base16-default
+colorscheme base16-flat
 set background=light
-highlight Normal ctermfg=grey ctermbg=grey
 
 " ## Status Line
 " --------------------
 set statusline=\ %t\
 set statusline+=%m
 set statusline+=%v
-set statusline+=%=
 set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ %f\
 
