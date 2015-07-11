@@ -73,7 +73,7 @@ filetype plugin indent on
 " --------------------
 let base16colorspace=256
 colorscheme base16-flat
-set background=light
+set background=dark
 
 " ## Status Line
 " --------------------
