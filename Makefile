@@ -23,4 +23,5 @@ plug:
 brew: Brewfile
 	brew tap Homebrew/bundle
 	brew install caskroom/cask/brew-cask
-	brew bundle Brewfile
+	brew bundle
+	brew bundle cleanup
