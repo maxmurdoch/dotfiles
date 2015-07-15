@@ -81,6 +81,3 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
 export NVM_DIR="/Users/maxmurdoch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
