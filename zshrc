@@ -62,7 +62,7 @@ export TERM=xterm-256color
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 export EDITOR='nvim'
-export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
+# export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 ################
 #   SETTINGS   #
@@ -81,3 +81,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
 export NVM_DIR="/Users/maxmurdoch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
