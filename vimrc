@@ -18,8 +18,12 @@ call plug#begin('~/.nvim/plugged')
   Plug 'chriskempson/base16-vim'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'ervandew/supertab'
+  Plug 'edkolev/tmuxline.vim'
   Plug 'gorkunov/smartpairs.vim'
   Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
+  Plug 'junegunn/vim-pseudocl'
+  Plug 'junegunn/vim-emoji'
   Plug 'junegunn/vim-easy-align'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
   Plug 'kana/vim-textobj-user'
@@ -77,11 +81,11 @@ set background=dark
 
 " ## Status Line
 " --------------------
-set statusline=\ %t\
-set statusline+=%m
-set statusline+=%v
-set statusline+=\ %{fugitive#statusline()}
-set statusline+=\ %f\
+set statusline =
+set statusline =%t
+set statusline +=\ %v
+set statusline +=\ %{fugitive#statusline()}
+set statusline +=\ %f\
 
 " ## Status Line
 " --------------------
@@ -155,7 +159,8 @@ set shiftwidth=2
 " --------------------
 " Ctrl-m -> writes file to disk, runs Make command of vim-dispatch
 map <C-m> <esc>:w<CR>:Make<CR>
-map <leader>rld :source $MYVIMRC<CR> " Reloads .vimrc file
+" Reloads .vimrc file and airline
+map <leader>rld :source $MYVIMRC<CR>:AirlineRefresh<CR>:Tmuxline vim_statusline_1<CR>
 " Toggle split between horizontal or vertical
 map <leader>sph <C-w>t<C-w>K<CR>
 map <leader>spv <C-w>t<C-w>H<CR>
@@ -231,8 +236,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " let g:hardtime_default_on = 1
 
 " ## Airline
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+let g:airline_powerline_fonts = 1
+let g:airline_section_y = ''
+let g:airline_mode_map = {
+      \ 'v' : 'V'
+      \ }
 
 " ## Rspec
 " use Dispatch from vim-rspec
@@ -282,3 +290,16 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 " fzf
 nnoremap <silent> <Leader><Leader> :FZF -m<CR>
 let g:fzf_height = '20%'
+
+" tmuxline
+let g:tmuxline_preset = 'nightly_fox'
+
+" emoji
+silent! if emoji#available()
+  let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+  let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+  let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+  let g:gitgutter_sign_modified_removed = emoji#for('collision')
+endif
+
+set completefunc=emoji#complete
