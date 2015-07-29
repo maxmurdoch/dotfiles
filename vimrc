@@ -61,6 +61,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
+  Plug 'wellle/targets.vim'
   Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
@@ -296,10 +297,10 @@ let g:tmuxline_preset = 'nightly_fox'
 
 " emoji
 silent! if emoji#available()
-  let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+  let g:gitgutter_sign_added = emoji#for('seedling')
   let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-  let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-  let g:gitgutter_sign_modified_removed = emoji#for('collision')
+  let g:gitgutter_sign_removed = emoji#for('collision')
+  let g:gitgutter_sign_modified_removed = emoji#for('fire')
 endif
 
 set completefunc=emoji#complete
