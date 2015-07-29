@@ -19,3 +19,7 @@ function deploy {
   git push origin master
   git checkout -
 }
+
+function c {
+  cd $(find ~/gc -type d -maxdepth 5 | fzf-tmux -d 15)
+}

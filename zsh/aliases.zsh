@@ -39,7 +39,7 @@ alias gcob="git checkout -b"
 
 alias gcm="git commit"
 alias gcmm="git commit -m"
-alias gcmb="git commit -b"
+alias gcma="git commit --amend"
 
 alias gd="git diff"
 alias gds="git diff --staged"
