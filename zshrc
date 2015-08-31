@@ -1,6 +1,8 @@
 autoload -U compinit
 autoload zmv
 compinit
+autoload -U promptinit && promptinit
+prompt pure
 # vi mode for zsh (http://dougblack.io/words/zsh-vi-mode.html)
 bindkey -v
 bindkey '^P' up-history
@@ -18,19 +20,16 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
-
 export DOTFILES="$HOME/dotfiles"
 
 source $DOTFILES/secret
 
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
-source $DOTFILES/zsh/completion/t-completion.zsh
 source $DOTFILES/zsh/plugins/safe-paste.zsh
-source $DOTFILES/zsh/pure.zsh
 source /usr/local/opt/autoenv/activate.sh
 source $DOTFILES/zsh/opp.zsh
-source $DOTFILES/zsh/*.zsh
+source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
@@ -60,7 +59,7 @@ export TERM=xterm-256color
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-export EDITOR='nvim'
+export EDITOR='vim'
 # export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 ################
@@ -73,7 +72,7 @@ SAVEHIST=20000
 setopt HIST_IGNORE_SPACE
 #
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.light.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 ## Nvm
