@@ -14,18 +14,18 @@ call plug#begin('~/.nvim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'benmills/vimux'
-  Plug 'bling/vim-airline'
   Plug 'chriskempson/base16-vim'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'edkolev/tmuxline.vim'
   Plug 'ervandew/supertab'
   Plug 'gorkunov/smartpairs.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+  Plug 'edkolev/tmuxline.vim'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'junegunn/vim-emoji'
   Plug 'junegunn/vim-pseudocl'
+  Plug 'junegunn/seoul256.vim'
   Plug 'kana/vim-textobj-user'
   Plug 'leshill/vim-json'
   Plug 'majutsushi/tagbar'
@@ -77,17 +77,21 @@ filetype plugin indent on
 
 " ## Colors
 " --------------------
+" let g:seoul256_background = 255
+" colo seoul256-light
 let base16colorspace=256
 colorscheme base16-flat
-set background=dark
+set background=light
 
 " ## Status Line
 " --------------------
-set statusline =
-set statusline =%t
-set statusline +=\ %v
-set statusline +=\ %{fugitive#statusline()}
-set statusline +=\ %f\
+set statusline=
+set statusline+=\ %v
+set statusline+=\ \|\ %t
+set statusline+=%#warningmsg#
+set statusline+=%*
+set statusline+=%=
+set statusline+=%{fugitive#head()}
 
 " ## Status Line
 " --------------------
@@ -136,22 +140,19 @@ vnoremap ~ y:call setreg('', ToggleCase(@"), getregtype(''))<CR>gv""Pgv
 " list of tab completion options are pulled from the list set to `complete`
 " here, options are pulled from current file, other buffers, and current tags
 " file
-set complete=.,b,u,]
+set complete-=i
 set wildmode=longest,list:longest
-set list listchars=tab:»·,trail:·
+set list
+set listchars=tab:\|\ ,trail:·
 
 
 " ## Tabs & Spacing
 " --------------------
-" Inserts spaces instead of tabs while using the tab key
-set expandtab
-" Sets number of spaces per tab
-set tabstop=2
-" Number of spaces that a <Tab> counts for while performing editing operations, like inserting a <Tab> or using <BS>.
-set softtabstop=2
-" Sets indentation to use spaces for tabs
 set shiftwidth=2
-
+set expandtab smarttab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 
 " # Maps
@@ -162,7 +163,7 @@ set shiftwidth=2
 " Ctrl-m -> writes file to disk, runs Make command of vim-dispatch
 map <C-m> <esc>:w<CR>:Make<CR>
 " Reloads .vimrc file and airline
-map <leader>rld :source $MYVIMRC<CR>:AirlineRefresh<CR>:Tmuxline vim_statusline_1<CR>
+map <leader>rld :source $MYVIMRC<CR>
 " Toggle split between horizontal or vertical
 map <leader>sph <C-w>t<C-w>K<CR>
 map <leader>spv <C-w>t<C-w>H<CR>
@@ -237,13 +238,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " turns hardtime on by default
 " let g:hardtime_default_on = 1
 
-" ## Airline
-let g:airline_powerline_fonts = 1
-let g:airline_section_y = ''
-let g:airline_mode_map = {
-      \ 'v' : 'V'
-      \ }
-
 " ## Rspec
 " use Dispatch from vim-rspec
 let g:rspec_command = 'Dispatch rspec {spec}'
@@ -273,9 +267,6 @@ nmap ga <Plug>(EasyAlign)
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_check_on_wq = 0
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['eslint']
@@ -292,9 +283,6 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 " fzf
 nnoremap <silent> <Leader><Leader> :FZF -m<CR>
 let g:fzf_height = '20%'
-
-" tmuxline
-let g:tmuxline_preset = 'nightly_fox'
 
 " emoji
 silent! if emoji#available()
