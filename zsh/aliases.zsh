@@ -57,7 +57,7 @@ alias gra="git rebase --abort"
 
 # Hub
 alias hpr="hub pull-request"
-alias ghb="hub browse"
+alias hb="hub browse"
 
 # Bundle
 alias b="bundle install"
