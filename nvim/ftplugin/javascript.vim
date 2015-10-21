@@ -1,1 +1,1 @@
-match Error '\%>120v.\+' " :help match
+2match ErrorMsg '\%121v.'

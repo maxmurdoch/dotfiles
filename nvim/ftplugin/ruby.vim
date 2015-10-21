@@ -1,1 +1,1 @@
-match Error '\%>90v.\+' " `:help match`
+2match ErrorMsg '\%91v.'
