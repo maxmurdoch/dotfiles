@@ -12,7 +12,6 @@ call plug#begin('~/.nvim/plugged')
   Plug '1995eaton/vim-better-css-completion'
   Plug '1995eaton/vim-better-javascript-completion'
   Plug 'AndrewRadev/splitjoin.vim'
-  Plug 'airblade/vim-gitgutter'
   Plug 'benmills/vimux'
   Plug 'chriskempson/base16-vim'
   Plug 'christoomey/vim-tmux-navigator'
@@ -77,21 +76,21 @@ filetype plugin indent on
 
 " ## Colors
 " --------------------
-" let g:seoul256_background = 255
-" colo seoul256-light
 let base16colorspace=256
-colorscheme base16-flat
+colorscheme base16-solarized
 set background=light
 
 " ## Status Line
 " --------------------
 set statusline=
+set statusline+=\ %l
 set statusline+=\ %v
-set statusline+=\ \|\ %t
+set statusline+=\ \|\ %f
 set statusline+=%#warningmsg#
 set statusline+=%*
 set statusline+=%=
 set statusline+=%{fugitive#head()}
+let g:tmuxline_powerline_separators = 0
 
 " ## Status Line
 " --------------------
@@ -99,8 +98,8 @@ set fillchars+=vert:\
 
 " ## Text Display
 " --------------------
-syntax on
 syntax enable
+syntax on
 set cursorline " highlight current row
 set scrolloff=5 " Breaks lines at punctuation if possible
 set linebreak " Shows last line instead of @ symbols
@@ -182,6 +181,11 @@ iabbrev </ </<C-X><C-O>
 "Ctrl-u uppercases word behind cursor
 inoremap <C-u> <esc>mzgUiw`za
 imap <C-Return> <CR><CR><C-o>k<Tab>
+
+" ## Visual mode maps
+" -------------------
+vmap ff zf
+vmap fd zd
 
 " ## Command-mode Maps
 " --------------------
@@ -282,14 +286,25 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 " fzf
 nnoremap <silent> <Leader><Leader> :FZF -m<CR>
-let g:fzf_height = '20%'
+let g:fzf_height = '30%'
 
-" emoji
-silent! if emoji#available()
-  let g:gitgutter_sign_added = emoji#for('seedling')
-  let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-  let g:gitgutter_sign_removed = emoji#for('collision')
-  let g:gitgutter_sign_modified_removed = emoji#for('fire')
-endif
+" Dash
+nnoremap <leader>k :Dash<cr>
+
+" " emoji
+" silent! if emoji#available()
+"   let g:gitgutter_sign_added = emoji#for('seedling')
+"   let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+"   let g:gitgutter_sign_removed = emoji#for('collision')
+"   let g:gitgutter_sign_modified_removed = emoji#for('fire')
+" endif
 
 set completefunc=emoji#complete
+
+" vim textobj quote (smart quotes)
+augroup textobj_quote
+  autocmd!
+  autocmd FileType markdown call textobj#quote#init()
+  autocmd FileType textile call textobj#quote#init()
+  autocmd FileType text call textobj#quote#init()
+augroup END
