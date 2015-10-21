@@ -16,7 +16,7 @@
 [color]
     ui = auto
 [core]
-    editor = nvim
+    editor = vim
     format = pretty
     excludesfile = ~/.gitexcludes
 [diff]
