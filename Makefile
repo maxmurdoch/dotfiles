@@ -13,6 +13,7 @@ symlinks:
 	@ln -sf $(PWD)/tmux.conf ~/.tmux.conf
 	@ln -sf $(PWD)/gitconfig ~/.gitconfig
 	@ln -sf $(PWD)/gitexcludes ~/.gitexcludes
+	@ln -sf $(PWD)/psqlrc ~/.psqlrc
 	@echo "Step 2: 'make plug'"
 
 plug:

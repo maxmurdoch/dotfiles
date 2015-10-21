@@ -1,5 +1,5 @@
 [user]
-    name = Max Murdoch
+    name = Hipster Murdoch
     email = max@maxmurdo.ch
 [push]
     default = simple
@@ -16,7 +16,7 @@
 [color]
     ui = auto
 [core]
-    editor = vim
+    editor = nvim
     format = pretty
     excludesfile = ~/.gitexcludes
 [diff]

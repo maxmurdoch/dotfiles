@@ -17,13 +17,11 @@ export PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig"
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export NODE_PATH="/usr/lib/node_modules"
 export MYVIMRC="$HOME/.vimrc"
-export TERM=screen-256color
+export TERM=xterm-256color
 export KEYTIMEOUT=1
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 export EDITOR='vim'
-# export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 export NVM_DIR="/Users/maxmurdoch/.nvm"
 

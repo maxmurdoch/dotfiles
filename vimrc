@@ -76,9 +76,10 @@ filetype plugin indent on
 
 " ## Colors
 " --------------------
+set t_Co=256
 let base16colorspace=256
-colorscheme base16-solarized
-set background=light
+colorscheme base16-flat
+set background=dark
 
 " ## Status Line
 " --------------------
@@ -244,7 +245,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " ## Rspec
 " use Dispatch from vim-rspec
-let g:rspec_command = 'Dispatch rspec {spec}'
+let g:rspec_command = 'Dispatch bin/spring rspec {spec}'
 
 " mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>

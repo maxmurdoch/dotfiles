@@ -9,7 +9,7 @@ alias ctags=/usr/local/bin/ctags
 alias k9="kill -9 "
 
 # `ls`
-alias {l,ls}="ls --color=tty"
+# alias {l,ls}="ls --color=tty"
 
 # Git
 alias g="git"
@@ -23,7 +23,7 @@ alias gap="git add -p"
 
 alias gb="git branch"
 lookup_branch() {
-  gco $(git branch | fzf-tmux -d 15)
+  git checkout $(git branch | fzf-tmux -d 15)
 }
 alias gbs=lookup_branch
 
@@ -52,6 +52,7 @@ alias gunstage="git reset HEAD"
 alias gt="git tag"
 
 alias gr="git rebase"
+alias gri="git rebase"
 alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 
