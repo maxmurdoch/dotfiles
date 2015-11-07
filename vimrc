@@ -108,6 +108,7 @@ set display+=lastline " New split panes are opening to the right and bottom
 set splitright
 set splitbelow
 set ruler " show the cursor position all the time
+set number
 set relativenumber " show line numbers relative to highlighted row
 set lazyredraw
 
@@ -245,7 +246,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " ## Rspec
 " use Dispatch from vim-rspec
-let g:rspec_command = 'Dispatch bin/spring rspec {spec}'
+let g:rspec_command = 'Dispatch rspec {spec}'
 
 " mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>

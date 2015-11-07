@@ -9,6 +9,8 @@ export PATH=".bundle/binstubs:$PATH"
 export PATH="./bin:$PATH"
 export LC_CTYPE="utf-8"
 
+# has to be screen otherwise there are rendering issues with fzf
+export TERM='screen-256color'
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -17,7 +19,6 @@ export PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig"
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export NODE_PATH="/usr/lib/node_modules"
 export MYVIMRC="$HOME/.vimrc"
-export TERM=xterm-256color
 export KEYTIMEOUT=1
 
 # You may need to manually set your language environment
