@@ -5,3 +5,4 @@ tags
 Session.vim
 trello
 node_modules
+.projectile

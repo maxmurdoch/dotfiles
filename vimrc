@@ -14,7 +14,6 @@ call plug#begin('~/.nvim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'benmills/vimux'
   Plug 'chriskempson/base16-vim'
-  Plug 'christoomey/vim-tmux-navigator'
   Plug 'ervandew/supertab'
   Plug 'gorkunov/smartpairs.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -115,7 +114,7 @@ set lazyredraw
 
 " ## Search
 " --------------------
-set nohls " Don’t highlight results
+set hls " Don’t highlight results
 set ignorecase smartcase " Case sensitive searches _only_ when uppercase chars are used
 set incsearch " Sets search to preview the first match
 
@@ -174,6 +173,7 @@ map <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " ## Normal-mode Maps
 " --------------------
 nmap <CR> *
+nmap <leader>h :nohl<CR>
 
 " ## Insert-mode Maps
 " --------------------
@@ -277,7 +277,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["javascript", "ruby"] }
+let g:syntastic_mode_map = { "mode": "passive" }
 
 " vim-javascript
 let g:javascript_enable_domhtmlcss = 1

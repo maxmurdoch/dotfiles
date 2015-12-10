@@ -8,3 +8,14 @@ nvim/undo
 nvim/plugged
 config/keybase
 config/hub
+emacs.d/elpa
+emacs.d/backups-files
+emacs.d/themes
+emacs.d/*~
+colors
+emacs.d/auto-save-list/
+emacs.d/projectile.cache
+emacs.d/eshell
+emacs.d/helm-adaptive-history
+emacs.d/#*
+emacs.d/.#*

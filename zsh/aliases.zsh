@@ -9,7 +9,7 @@ alias ctags=/usr/local/bin/ctags
 alias k9="kill -9 "
 
 # `ls`
-# alias {l,ls}="ls --color=tty"
+alias {l,ls}="ls --color=tty"
 
 # Git
 alias g="git"
@@ -61,7 +61,7 @@ alias hpr="hub pull-request"
 alias hb="hub browse"
 
 # Bundle
-alias b="bundle install"
+alias b="bundle"
 
 # tmux
 alias tns="tmux new-session -s"
@@ -69,3 +69,14 @@ alias tks="tmux kill-session -t"
 alias ta="tmux attach -t"
 alias tls="tmux ls"
 alias tds="tmux detach"
+
+# spring
+alias springplz="spring stop"
+alias gtfospring="spring stop"
+alias ffsspring="spring stop"
+
+# emacs
+alias ed="emacs --daemon"
+alias e="emacsclient -t"
+alias et="emacsclient -t"
+alias ec="emacsclient -c"

@@ -20,3 +20,7 @@ PHP
 #nqueueing
 tr
 Calls ::Payouts::MerchantGenerator, ::Payouts::PartnerGenerator, ::Payouts::AppFeeGenerator
+anthropomorphise
+complect
+complects
+Destructuring

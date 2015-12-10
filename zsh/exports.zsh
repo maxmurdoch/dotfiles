@@ -9,8 +9,8 @@ export PATH=".bundle/binstubs:$PATH"
 export PATH="./bin:$PATH"
 export LC_CTYPE="utf-8"
 
-# has to be screen otherwise there are rendering issues with fzf
-export TERM='screen-256color'
+
+export TERM='screen-256color' # has to be screen otherwise there are rendering issues with fzf
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 

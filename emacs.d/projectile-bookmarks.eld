@@ -1,0 +1,1 @@
+("~/gc/payments-service/" "~/" "~/dotfiles/")
