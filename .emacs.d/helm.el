@@ -25,3 +25,7 @@
 
 (use-package helm-dash
   :ensure t)
+
+(use-package ac-helm
+  :ensure t
+  :bind ("C-'" . ac-complete-with-helm))

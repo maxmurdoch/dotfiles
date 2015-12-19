@@ -11,10 +11,15 @@
 (setq x-select-enable-clipboard t)
 
 (column-number-mode t)
-(global-linum-mode 1)
+(use-package relative-line-numbers
+  :ensure t
+  :init
+  (linum-mode -1)
+  (global-relative-line-numbers-mode))
 
-(set-background-color "black")
-(set-face-background hl-line-face "color-18")
-(set-face-background 'linum "black")
-(set-face-foreground 'mode-line "brightwhite")
-(fringe-mode 10)
+(set-fringe-mode 0)
+
+; window-system == GUI
+(if (display-graphic-p)
+    (progn
+      (load-theme 'solarized t)))

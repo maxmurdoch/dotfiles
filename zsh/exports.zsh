@@ -22,7 +22,7 @@ export MYVIMRC="$HOME/.vimrc"
 export KEYTIMEOUT=1
 
 # You may need to manually set your language environment
-export EDITOR='vim'
+export EDITOR='emacsclient -c'
 
 export NVM_DIR="/Users/maxmurdoch/.nvm"
 
