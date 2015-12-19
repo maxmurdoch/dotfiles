@@ -32,6 +32,7 @@ brew 'zsh'
 brew 'heroku-toolbelt'
 brew 'fzf', args: ['--HEAD']
 brew 'vim'
+brew 'emacs', args: ['--with-cocoa', '--with-ctags', '--with-imagemagick', '--with-librsvg', '--devel']
 
 tap 'neovim/neovim'
 brew 'neovim', args: ['HEAD']

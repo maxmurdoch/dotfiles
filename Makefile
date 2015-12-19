@@ -10,8 +10,8 @@ symlinks:
 	@ln -nsf $(PWD)/nvimrc  ~/.nvimrc
 	@ln -nsf $(PWD)/ctags  ~/.ctags
 	@ln -nsf $(PWD)/config  ~/.config
-	@ln -nsf $(PWD)/.emacs.d  ~/.emacs.d
-	@ln -nsf $(PWD)/.emacs  ~/.emacs
+	@ln -nsf $(PWD)/emacs.d  ~/.emacs.d
+	@ln -nsf $(PWD)/emacs  ~/.emacs
 	@ln -sf $(PWD)/tmux.conf ~/.tmux.conf
 	@ln -sf $(PWD)/gitconfig ~/.gitconfig
 	@ln -sf $(PWD)/gitexcludes ~/.gitexcludes
@@ -28,3 +28,6 @@ brew: Brewfile
 	brew install caskroom/cask/brew-cask
 	brew bundle
 	brew bundle cleanup
+
+zsh:
+	chsh -s /bin/zsh

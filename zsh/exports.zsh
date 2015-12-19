@@ -6,11 +6,11 @@ export PATH="$HOME/.node_modules:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="node_modules/.bin:$PATH"
 export PATH=".bundle/binstubs:$PATH"
+export PATH="/usr/local/lib:$PATH"
 export PATH="./bin:$PATH"
 export LC_CTYPE="utf-8"
 
 
-export TERM='screen-256color' # has to be screen otherwise there are rendering issues with fzf
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 

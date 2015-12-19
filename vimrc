@@ -1,4 +1,4 @@
-" # Plug
+" Plugins
 " ========================================
 
 " not vi compatible
@@ -77,8 +77,8 @@ filetype plugin indent on
 " --------------------
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-flat
-set background=dark
+colorscheme base16-tomorrow
+set background=light
 
 " ## Status Line
 " --------------------
