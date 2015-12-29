@@ -6,10 +6,11 @@ nvim/undo
 nvim/tmp
 nvim/undo
 nvim/plugged
+vim/
 config/keybase
 config/hub
 .emacs~
-.emacs.d/elpa
+.emacs.d/elpa/**
 .emacs.d/backups-files
 .emacs.d/themes
 .emacs.d/*~

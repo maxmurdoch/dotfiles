@@ -19,7 +19,12 @@
 
 (set-fringe-mode 0)
 
-; window-system == GUI
-(if (display-graphic-p)
-    (progn
-      (load-theme 'solarized t)))
+(use-package base16-theme
+  :ensure t
+  :init
+  (load-theme 'base16-tomorrow-light t) ; t means it won't confirm when loading the theme
+  )
+
+(set-face-background 'hl-line "gray93")
+(set-face-background 'linum "gray93")
+(set-face-background 'region "gray80")

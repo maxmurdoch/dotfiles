@@ -14,11 +14,14 @@
          ("C-c f" . helm-recentf)
          ("C-x C-f" . helm-find-files)
          ("C-c <SPC>" . helm-all-mark-rings)
-         ("C-s" . helm-occur)
+         ("C-c s" . helm-occur)
          ("C-h C-f" . helm-apropos)
          ("C-c w" . helm-man-woman)
          ("M-g a" . helm-do-grep-ag)
-         ))
+         )
+  :config
+  (set-face-background 'helm-selection "gray93")
+  )
 
 (use-package helm-ag
   :ensure t)

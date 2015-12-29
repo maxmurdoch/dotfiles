@@ -10,7 +10,9 @@
             (use-package rspec-mode
               :ensure t
               :init
-              (setq rspec-use-rake-when-possible nil))
+              (setq rspec-use-rake-when-possible nil)
+              (setq rspec-use-bundler-when-possible nil) ; only use this if you've set bundler as shown http://hmarr.com/2012/nov/08/rubies-and-bundles/
+              )
             (use-package projectile-rails
               :ensure t)
             (use-package yard-mode ; adds fonts to yard doc tags

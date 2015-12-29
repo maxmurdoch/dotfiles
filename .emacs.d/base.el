@@ -8,13 +8,15 @@
 
 ;; set backups
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups-files")))
-;; (setq auto-save-file-name-transforms
-       ;; '((".*" temporary-file-directory t)))
 (setq gc-cons-threshold (* 20 1024 1024))
-(global-auto-complete-mode t)
 
-(fset 'yes-or-no-p 'y-or-n-p)
+(setq global-auto-complete-mode t)
+(setq custom-file "~/.emacs.d/custom.el") ; save custom variables in a specific file, not .emacs
+
+
+(fset 'yes-or-no-p 'y-or-n-p) ; use y or n rather than yes or no in interactive dialogs
+
 (blink-cursor-mode t)
 (delete-selection-mode t) ; typing when a word is highlighted deletes the word
-
 (electric-pair-mode 1)
+(setq visible-bell t)

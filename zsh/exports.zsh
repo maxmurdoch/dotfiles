@@ -3,11 +3,11 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOME/local/node/bin:$PATH"
 export PATH="$HOME/.node_modules:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="node_modules/.bin:$PATH"
 export PATH=".bundle/binstubs:$PATH"
 export PATH="/usr/local/lib:$PATH"
 export PATH="./bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 export LC_CTYPE="utf-8"
 
 

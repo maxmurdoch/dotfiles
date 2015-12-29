@@ -11,7 +11,7 @@
   (package-install 'use-package))
 (require 'use-package)
 
-(load "~/.emacs.d/foundation.el")
+(load "~/.emacs.d/base.el")
 (load "~/.emacs.d/custom.el")
 (load "~/.emacs.d/aesthetic.el")
 (load "~/.emacs.d/company.el")
@@ -19,6 +19,7 @@
 (load "~/.emacs.d/typography.el")
 (load "~/.emacs.d/avy.el")
 (load "~/.emacs.d/ruby.el")
+(load "~/.emacs.d/javascript.el")
 (load "~/.emacs.d/helm.el")
 (load "~/.emacs.d/projectile.el")
 (load "~/.emacs.d/flycheck.el")
