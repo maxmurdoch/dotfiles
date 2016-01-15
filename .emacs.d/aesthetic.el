@@ -28,3 +28,7 @@
 (set-face-background 'hl-line "gray93")
 (set-face-background 'linum "gray93")
 (set-face-background 'region "gray80")
+(use-package indent-guide
+  :ensure t
+  :init
+  (setq indent-guide-mode t))

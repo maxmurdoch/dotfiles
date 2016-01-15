@@ -1,1 +1,1 @@
-("~/dotfiles/" "~/code/gocardless/payments-service/" "~/Dropbox/org/" "~/dotfiles/base16-iterm2/" "~/code/gocardless/enterprise-dashboard/")
+("~/code/gocardless/payments-service/" "~/dotfiles/" "/usr/local/" "~/code/learn-sql-the-hard-way/" "~/code/gocardless/pro-api-docs-template/" "~/code/gocardless/enterprise-dashboard/" "~/Dropbox/notes/" "~/Dropbox/org/")

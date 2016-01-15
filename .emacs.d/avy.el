@@ -9,4 +9,7 @@
              :ensure t
              :config
              (setq aw-dispatch-always 1)
-             (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
+             (setq aw-keys '(?a ?s ?d ?f ?g ?j ?k ?l ?\;))
+             ; (global-key-binding (kbd "C-|") 'aw-split-window-vert)
+             ; (global-key-binding (kbd "C-\-") 'aw-split-window-horz)
+             )

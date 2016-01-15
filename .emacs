@@ -19,6 +19,7 @@
 (load "~/.emacs.d/typography.el")
 (load "~/.emacs.d/avy.el")
 (load "~/.emacs.d/ruby.el")
+(load "~/.emacs.d/css.el")
 (load "~/.emacs.d/javascript.el")
 (load "~/.emacs.d/helm.el")
 (load "~/.emacs.d/projectile.el")

@@ -1,0 +1,83 @@
+let _ = require('lodash');
+let paymentsByCustomerFixture = require('../../../services/payments/index.fixture.json');
+let customersFixture = require('../../../services/customers/show.fixture.json');
+let mockUserAccess = require('../../../../../spec/mock-user-access');
+let mockDateCreator = require('../../../../../spec/mock-date-creator');
+let createStubby = require('../../../../../spec/create-stubby');
+
+describe('Payments index page', function() {
+  let stubby = createStubby(browser);
+  mockUserAccess(browser);
+
+  beforeEach(function() {
+    paymentsByCustomerFixture = _.cloneDeep(paymentsByCustomerFixture);
+    let confirmedPayments = _.cloneDeep(paymentsByCustomerFixture);
+    confirmedPayments.payments[0].status = 'confirmed';
+
+    let isoDate = mockDateCreator.today().toISO();
+
+    stubby.withModule('createE2EServer', function(
+      isoDate, paymentsByCustomerResponse, confirmedPayments, customersResponse
+    ) {
+      window.stubby.stub({
+        url: '/customers/CU000010782KGB',
+      }).respondWith(200, customersResponse);
+      window.stubby.stub({
+        url: '/payments',
+        params: {
+          include: 'customer',
+          customer: 'CU000010782KGB',
+          limit: '25',
+          include_total_count: true,
+        },
+      }).respondWith(200, paymentsByCustomerResponse);
+      window.stubby.stub({
+        url: '/payments',
+        params: {
+          include: 'customer',
+          customer: 'CU000010782KGB',
+          status: 'confirmed',
+          include_total_count: true,
+          limit: 25,
+        },
+      }).respondWith(200, confirmedPayments);
+
+      window.stubby.stub({
+        url: '/payments',
+        params: {
+          include: 'customer',
+          customer: 'CU000010782KGB',
+          include_total_count: true,
+          'created_at[gte]': isoDate,
+          limit: 25,
+        },
+      }).respondWith(200, paymentsByCustomerResponse);
+    }, isoDate, paymentsByCustomerFixture, confirmedPayments, customersFixture);
+  });
+
+  afterEach(function() {
+    stubby.verifyNoOutstandingRequests();
+  });
+
+  it('filters by status and created at', function() {
+    browser.get('/payments?customer=CU000010782KGB');
+
+    $('#status-filter [label="Confirmed"]').click();
+    expect(browser.getCurrentUrl()).toContain('payments?customer=CU000010782KGB&status=confirmed');
+
+    let firstPaymentStatus = element(by.repeater('payment in ctrl.payments').row(0).column('status'));
+    expect(firstPaymentStatus.getText()).toContain('Confirmed');
+
+    $('[clear-filter-data]').click();
+    expect(browser.getCurrentUrl()).toContain('payments?customer=CU000010782KGB');
+
+    // Filters with the date-picker
+    $('#created-at-filter [label="Between"]').click();
+    $('[date="ctrl.startAt"] input').click();
+    $('[date="ctrl.startAt"] button[aria-label="today"]').click();
+
+    expect(browser.getCurrentUrl())
+      .toContain('/payments?customer=CU000010782KGB&created_at=between&created_at_gte=' +
+        mockDateCreator.today().toISO());
+  });
+});

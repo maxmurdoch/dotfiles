@@ -1,0 +1,21 @@
+import angular from 'angular';
+import _ from 'lodash';
+
+export const creditorBankAccountsShowControllerModule = angular.module('creditorBankAccountsShowControllerModule', [
+]).controller('CreditorBankAccountsShowController', [
+  'creditorBankAccount',
+  'payouts',
+  function CreditorBankAccountsShowController(
+    creditorBankAccount,
+    payouts
+  ) {
+    const ctrl = this;
+    
+    _.extend(ctrl, {
+      creditorBankAccount: creditorBankAccount.creditor_bank_accounts,
+      payouts: payouts.payouts,
+      payoutsMeta: payouts.meta,
+    });
+
+  },
+]);

@@ -8,6 +8,9 @@
 
 ;; set backups
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups-files")))
+(make-directory "~/.emacs.d/autosaves/" t) ; create the autosave dir if necessary, since emacs won't.
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+
 (setq gc-cons-threshold (* 20 1024 1024))
 
 (setq global-auto-complete-mode t)
@@ -19,4 +22,5 @@
 (blink-cursor-mode t)
 (delete-selection-mode t) ; typing when a word is highlighted deletes the word
 (electric-pair-mode 1)
-(setq visible-bell t)
+(setq visible-bell 1)
+(setq ring-bell-function 'ignore)

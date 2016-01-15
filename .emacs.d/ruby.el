@@ -18,15 +18,22 @@
             (use-package yard-mode ; adds fonts to yard doc tags
               :ensure t
               :diminish yard-mode)
-            (use-package ruby-end ; adds ruby end blocks
-              :ensure t)
             (use-package ruby-electric ; matching pairs, handles `do`, handles heredocs
-              :ensure t)
+              :ensure t
+              :init
+              (ruby-electric-mode)
+              (electric-pair-mode)
+              (electric-quote-mode)
+              (electric-layout-mode))
             (use-package inf-ruby ; run inferior ruby processes
               :ensure t
               :init
               (inf-ruby-switch-setup))
             (setq ruby-insert-encoding-magic-comment nil)
+            (use-package ruby-tools
+              :ensure t
+              :init
+              (setq ruby-tools-mode t))
             (use-package column-enforce-mode
               :ensure t)
             (use-package ruby-interpolation ; adds {} when it finds a hash in a double quote string
@@ -36,7 +43,10 @@
                       (lambda ()
                         (column-enforce-mode)
                         (column-enforce-n 90)
-                        (projectile-rails-on)))))
+                        (projectile-rails-on)
+                        (indent-guide-mode)
+                        (rainbow-delimiters-mode-enable)
+                        ))))
 
 (use-package rbenv
   :ensure t
