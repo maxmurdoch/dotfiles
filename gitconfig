@@ -2,17 +2,7 @@
     name = Max Murdoch
     email = max@maxmurdo.ch
 [push]
-    default = simple
-# [alias]
-#     st = status -sb
-#     co = checkout
-#     br = branch
-#     up = rebase
-#     ci = commit
-#     aa = add --all
-#     lg = log --pretty='%h – %an, %ar – "%s"' # (%h|H)ash – (%a|A)uthor-(%n|N)ame, (%a|A)uthor date (%r|R)elative – (%s|S)ubject
-#     unstage = reset HEAD --
-#     last = log -1 HEAD
+    default = current
 [color]
     ui = auto
 [core]
@@ -22,6 +12,6 @@
 [diff]
     tool = vimdiff
 [url "git@github.com"]
-	insteadOf = https://github.com
+	  insteadOf = https://github.com
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+	  insteadOf = https://github.com/
