@@ -1,1 +1,1 @@
-![](https://dl.dropboxusercontent.com/s/ukkxcdq7xc8ff69/jamming.gif?dl=://dl.dropboxusercontent.com/s/ukkxcdq7xc8ff69/jamming.gif?dl=0)
+![](https://dl.dropboxusercontent.com/s/il11i42r2zrmtjx/specialists.gif?dl=0)
