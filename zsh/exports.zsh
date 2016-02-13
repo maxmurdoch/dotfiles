@@ -1,6 +1,7 @@
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$HOME/local/node/bin:$PATH"
 export PATH="$HOME/.node_modules:$PATH"
 export PATH="node_modules/.bin:$PATH"
@@ -9,8 +10,10 @@ export PATH="/usr/local/lib:$PATH"
 export PATH="./bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export LC_CTYPE="utf-8"
+export NVM_DIR="$HOME/.nvm"
+. $(brew --prefix nvm)/nvm.sh
 
-export GC_GIT=$HOME/gc
+export GC_GIT=$HOME/code/gocardless
 [ -f $GC_GIT/scripts/dev_env/env_setup.sh ] && . $GC_GIT/scripts/dev_env/env_setup.sh
 
 export MANPATH="/usr/local/man:$MANPATH"
