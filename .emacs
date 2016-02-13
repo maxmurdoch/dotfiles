@@ -12,6 +12,11 @@
 (require 'use-package)
 
 (load "~/.emacs.d/base.el")
+(load "~/.emacs.d/org.el")
+(load "~/.emacs.d/lisps.el")
+(load "~/.emacs.d/web.el")
+(load "~/.emacs.d/diminish.el")
+(load "~/.emacs.d/exec-path.el")
 (load "~/.emacs.d/custom.el")
 (load "~/.emacs.d/aesthetic.el")
 (load "~/.emacs.d/company.el")
@@ -26,3 +31,4 @@
 (load "~/.emacs.d/flycheck.el")
 (load "~/.emacs.d/magit.el")
 (load "~/.emacs.d/keybindings.el")
+(load "~/.emacs.d/smart-mode-line.el")

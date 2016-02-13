@@ -7,6 +7,7 @@
 
 (use-package helm
   :ensure t
+  :diminish ""
   :defer t
   :bind (("C-c h" . helm-mini)
          ("M-x" . helm-M-x)
@@ -20,8 +21,7 @@
          ("M-g a" . helm-do-grep-ag)
          )
   :config
-  (set-face-background 'helm-selection "gray93")
-  )
+  (set-face-background 'helm-selection "gray93"))
 
 (use-package helm-ag
   :ensure t)

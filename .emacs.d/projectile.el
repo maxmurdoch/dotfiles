@@ -4,6 +4,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish ""
   :init
   (projectile-global-mode)
   :config
