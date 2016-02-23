@@ -5,8 +5,6 @@
   (setq js-indent-level 2)
   (setq-default js2-basic-offset 2)
   :config
-  (add-hook 'javascript-mode-hook
-          (lambda ()
-            (column-enforce-n 120)
-            (rainbow-delimiters-mode-enable)
-            (indent-guide-mode))))
+  (column-enforce-n 120)
+  (rainbow-delimiters-mode)
+  (indent-guide-mode))
