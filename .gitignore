@@ -21,3 +21,11 @@ colors
 .emacs.d/helm-adaptive-history
 .emacs.d/#*
 .emacs.d/.#*
+/.emacs.d/autosaves/
+/config/configstore/
+/.emacs.d/emojis/
+/.emacs.d/places
+/.emacs.d/autosaves/
+/.emacs.d/rake.cache
+/.emacs.d/diary
+/.emacs.d/bookmarks
