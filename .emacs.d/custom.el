@@ -14,6 +14,12 @@
  '(electric-pair-mode t)
  '(global-hl-line-mode t)
  '(line-number-mode t)
+ '(mode-line-format
+   (quote
+    ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification sml/pos-id-separator mode-line-position
+     (vc-mode vc-mode)
+     sml/pre-modes-separator mode-line-modes mode-line-misc-info mode-line-end-spaces)))
+ '(mode-line-in-non-selected-windows t)
  '(package-selected-packages
    (quote
     (modeline-posn json-mode minimal-theme smart-mode-line-powerline-theme powerline js2-refactor go-mode racket-mode multiple-cursors org-trello ac-geiser geiser scheme-complete deft restart-emacs exec-path-from-shell helm-ag-r ag focus markdown-mode markdown-preview-mode ctags helm-flx company-flx flx-isearch flx-ido fold-dwim emacsql-sqlite web-mode markdown-mode+ yaml-mode rainbow-delimiters auto-indent-mode indent-guide helm-flyspell goto-last-change ruby-tools ruby-refactor visual-regexp-steroids visual-regexp bundler smartparens paredit js2-mode ruby-interpolation column-enforce-mode ruby-electric yard-mode projectile-rails rspec-mode robe use-package relative-line-numbers rbenv neotree magit helm-projectile helm-dash helm-ag flycheck company base16-theme avy-zap ace-window ac-helm)))
@@ -32,7 +38,7 @@
  '(helm-selection-line ((t (:background "#F1C40F" :foreground "black"))))
  '(highlight ((t (:background "#ECF0F1"))))
  '(hl-line ((t (:inherit highlight))))
- '(mode-line ((t (:background "#373b41" :foreground "#ddd" :box (:line-width 5 :color "#373B41") :height 1.0))))
+ '(mode-line ((t (:background "#373b41" :inverse-video nil :box (:line-width 5 :color "#2C3E50") :height 1.0))))
  '(relative-line-numbers ((t (:inherit linum))))
  '(show-paren-match ((t (:background "#ECF0F1" :foreground "#222" :weight bold))))
  '(show-paren-mismatch ((t (:background "#ECF0F1" :foreground "IndianRed2" :weight bold)))))

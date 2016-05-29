@@ -8,4 +8,9 @@
                                       (current-buffer) nil t)) 1 1)))
 
 ;; use rainbow delimiters in all programming modes
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (progn
+              (rainbow-delimiters-mode)
+              (typo-mode -1))
+            ))
