@@ -18,7 +18,6 @@
    (quote
     (modeline-posn json-mode minimal-theme smart-mode-line-powerline-theme powerline js2-refactor go-mode racket-mode multiple-cursors org-trello ac-geiser geiser scheme-complete deft restart-emacs exec-path-from-shell helm-ag-r ag focus markdown-mode markdown-preview-mode ctags helm-flx company-flx flx-isearch flx-ido fold-dwim emacsql-sqlite web-mode markdown-mode+ yaml-mode rainbow-delimiters auto-indent-mode indent-guide helm-flyspell goto-last-change ruby-tools ruby-refactor visual-regexp-steroids visual-regexp bundler smartparens paredit js2-mode ruby-interpolation column-enforce-mode ruby-electric yard-mode projectile-rails rspec-mode robe use-package relative-line-numbers rbenv neotree magit helm-projectile helm-dash helm-ag flycheck company base16-theme avy-zap ace-window ac-helm)))
  '(show-paren-mode t)
- '(size-indication-mode t)
  '(sml/col-number-format "col %2c")
  '(sml/line-number-format "line %2l")
  '(sml/numbers-separator ", "))
