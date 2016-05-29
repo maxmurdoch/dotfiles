@@ -15,9 +15,6 @@
          )
   )
 
-
-
-
 ;; basic settings
 
 (setq org-directory "~/notes")
@@ -37,11 +34,15 @@
         ("done" . (:foreground "SeaGreen3" :weight bold))
         ("cancelled" . (:foreground "IndianRed3" :weight bold))))
 
+;; tags
+
+(setq org-tag-alist '(("@personal" . ?p) ("@cambridge" . ?c)))
+
 ;; capture
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-capture-templates
-      '(("t" "todo" entry (file+headline "~/notes/todo.org" "To be sorted")
-         "* todo %?\n %i\n %a")
-        ("j" "Journal" entry (file+datetree "~/notes/journal.org")
+      '(("t" "todo" entry (file "~/notes/todo.org")
+         "* todo %?\n %i\n %T\n %^G\n %l")
+        ("j" "journal" entry (file+datetree "~/notes/journal.org")
          "* %?\nEntered on %U\n %i\n %a")))
