@@ -1,7 +1,3 @@
-(use-package neotree
-  :ensure t
-  :bind ("C-c t" . neotree-toggle))
-
 (use-package projectile
   :ensure t
   :diminish ""
@@ -15,4 +11,5 @@
   (setq projectile-enable-idle-timer t)
   (setq projectile-enable-caching t)
   (setq projectile-tags-command "ctags -Re -f \"%s\" %s")
+  (setq tags-revert-without-query 1) ; don't ask to read new tags table when it refreshes
   (helm-projectile-on))
