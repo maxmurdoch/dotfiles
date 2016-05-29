@@ -62,6 +62,7 @@ alias hb="hub browse"
 
 # Bundle
 alias b="bundle"
+alias bx="bundle exec "
 
 # tmux
 alias tns="tmux new-session -s"
