@@ -1,10 +1,8 @@
-(use-package js2-mode
+(use-package js
   :ensure t
-  :mode ("\\.\\(js\\|jsx\\)\\'" . js2-mode)
-  :init
-  (setq js-indent-level 2)
-  (setq-default js2-basic-offset 2)
+  :mode ("\\.\\(js\\|jsx\\)\\'" . js-mode)
   :config
-  (column-enforce-n 120)
-  (rainbow-delimiters-mode)
-  (indent-guide-mode))
+  (setq js-indent-level 2)
+  (setq-local fill-column 120)
+  (size-indication-mode -1) ; don't show buffer size in mode line
+  (column-enforce-n 120))
