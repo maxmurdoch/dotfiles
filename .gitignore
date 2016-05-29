@@ -29,3 +29,4 @@ colors
 /.emacs.d/rake.cache
 /.emacs.d/diary
 /.emacs.d/bookmarks
+/.emacs.d/projectile-bookmarks.eld
