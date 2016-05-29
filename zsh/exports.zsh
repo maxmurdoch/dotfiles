@@ -11,10 +11,6 @@ export PATH="./bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export LC_CTYPE="utf-8"
 export NVM_DIR="$HOME/.nvm"
-. $(brew --prefix nvm)/nvm.sh
-
-export GC_GIT=$HOME/code/gocardless
-[ -f $GC_GIT/scripts/dev_env/env_setup.sh ] && . $GC_GIT/scripts/dev_env/env_setup.sh
 
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
