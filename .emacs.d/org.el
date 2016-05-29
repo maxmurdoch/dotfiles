@@ -1,44 +1,47 @@
 (use-package org
   :ensure t
-  :bind
-  ("C-c u" . org-do-promote)
-  ("C-c c" . org-capture)
   :init
   (turn-on-auto-fill)
-  (setq fill-column 70)
-  (setq org-hide-leading-stars t))
+  (setq-default fill-column 80)
+  (typo-mode)
+  (setq-default typo-language "English")
+  (flyspell-mode)
+  (setq org-hide-leading-stars t)
+  :bind (
+         ("C-c l" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c u" . org-do-promote)
+         ("C-c c" . org-capture)
+         )
+  )
 
-;; Basic settings
 
-(setq org-directory "~/org")
+
+
+;; basic settings
+
+(setq org-directory "~/notes")
 (setq org-log-done 'time)
-(setq org-agenda-files (list "~/org/gocardless.org" "~/org/personal.org" "~/org/todo.org"))
+(setq org-agenda-files (list "~/notes"))
 
-;; Todo
+;; todo
 
- (setq org-todo-keywords
-       '((sequence "TODO" "STARTED" "WAITING" "|" "DONE")))
+(setq org-todo-keywords
+      '((sequence "todo(t!)" "started(s!)" "waiting(w@/!)" "|" "done(d@/!)" "snoozed(S!)" "cancelled(c!)")))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . (:foreground "IndianRed2" :weight bold))
-        ("STARTED" . (:foreground "goldenrod2" :weight bold))
-        ("WAITING" . (:foreground "CadetBlue3" :weight bold))
-        ("DONE" . (:foreground "SeaGreen3" :weight bold))))
+      '(("todo" . (:foreground "IndianRed2" :weight bold))
+        ("started" . (:foreground "goldenrod2" :weight bold))
+        ("waiting" . (:foreground "CadetBlue3" :weight bold))
+        ("snoozed" . (:foreground "gray79" :weight bold))
+        ("done" . (:foreground "SeaGreen3" :weight bold))
+        ("cancelled" . (:foreground "IndianRed3" :weight bold))))
 
-;; Capture
+;; capture
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-
-;; Functions
-
-(defun todo ()
-  (interactive)
-  (find-file (concat org-directory "/todo.org")))
-
-(defun gocardless ()
-  (interactive)
-  (find-file (concat org-directory "/gocardless.org")))
-
-(defun personal ()
-  (interactive)
-  (find-file (concat org-directory "/personal.org")))
+(setq org-capture-templates
+      '(("t" "todo" entry (file+headline "~/notes/todo.org" "To be sorted")
+         "* todo %?\n %i\n %a")
+        ("j" "Journal" entry (file+datetree "~/notes/journal.org")
+         "* %?\nEntered on %U\n %i\n %a")))
