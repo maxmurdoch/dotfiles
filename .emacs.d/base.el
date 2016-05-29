@@ -1,6 +1,6 @@
 ;;;; defaults
 
-(set-default 'fill-column 100)
+(setq-default fill-column 100)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq inhibit-startup-message t)
@@ -15,7 +15,7 @@
 
 (setq gc-cons-threshold (* 20 1024 1024))
 
-(setq global-auto-complete-mode t)
+(setq-default global-auto-complete-mode t)
 (setq custom-file "~/.emacs.d/custom.el") ; save custom variables in a specific file, not .emacs
 
 (blink-cursor-mode t)
@@ -23,3 +23,10 @@
 (electric-pair-mode 1)
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
+
+;; use utf-8
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(indent-guide-mode)
+(show-paren-mode)

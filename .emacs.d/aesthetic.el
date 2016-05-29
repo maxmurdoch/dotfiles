@@ -1,27 +1,25 @@
-; reduce clutter
+;; reduce clutter
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-
-; always have a hl bar
-(global-hl-line-mode t)
-
-(transient-mark-mode 't)
+(global-linum-mode -1) ; use line number in menu bar instead of in the margin
+(setq-default cursor-type 'bar) ; use a bar cursor rather than a box
+; if you have a selection and you start typing, replace the selection
+; with new characters
 (delete-selection-mode t)
-(setq left-margin-width 3)
-(setq right-margin-width 3)
-(setq x-select-enable-clipboard t)
-(set-face-attribute 'fringe nil :background "gray100")
+
+;; add space
+
+(set-window-margins nil 1 1)
+(set-fringe-mode 0)
+
+;; add theme
 
 (use-package base16-theme
   :ensure t
-  :init
-  (load-theme 'base16-tomorrow-light t) ; t means it won't confirm when loading the theme
-  (line-number-mode)
-  (column-number-mode))
-
-(set-face-background 'hl-line "gray93")
-(set-face-background 'region "gray80")
+  :init (load-theme 'base16-flat-light t) ; t means it won't confirm when loading the theme
+  )
 
 (use-package indent-guide
   :ensure t
