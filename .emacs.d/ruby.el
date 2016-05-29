@@ -28,14 +28,6 @@
             (use-package yard-mode ; adds fonts to yard doc tags
               :ensure t
               :diminish "")
-            (use-package ruby-electric ; matching pairs, handles `do`, handles heredocs
-              :diminish ""
-              :ensure t
-              :init
-              (ruby-electric-mode)
-              (electric-pair-mode)
-              (electric-quote-mode)
-              (electric-layout-mode))
             (use-package inf-ruby ; run inferior ruby processes
               :ensure t
               :diminish ""
@@ -57,19 +49,9 @@
                         (column-enforce-mode)
                         (column-enforce-n 90)
                         (projectile-rails-on)
-                        (indent-guide-mode)
-                        (rainbow-delimiters-mode-enable)
-                        ))))
+                        (electric-indent-local-mode)
+                        (indent-guide-mode)))))
 
 (use-package rbenv
   :ensure t
   :defer t)
-
-;; enable use of hideshow with ruby
-(eval-after-load "hideshow"
-  '(add-to-list 'hs-special-modes-alist
-                 `(ruby-mode
-                   ,(rx (or "def" "class" "module" "{" "[")) ; Block start
-                   ,(rx (or "}" "]" "end"))                  ; Block end
-                   ,(rx (or "#" "=begin"))                   ; Comment start
-                   ruby-forward-sexp nil)))
