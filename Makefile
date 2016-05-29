@@ -15,12 +15,13 @@ symlinks:
 	@ln -sf $(PWD)/tmux.conf ~/.tmux.conf
 	@ln -sf $(PWD)/gitconfig ~/.gitconfig
 	@ln -sf $(PWD)/gitexcludes ~/.gitexcludes
+	@ln -sf $(PWD)/git-commit-template ~/.git-commit-template
 	@ln -sf $(PWD)/psqlrc ~/.psqlrc
 	@echo "Linking dotfiles is finished. Run 'make plug'."
 
 plug:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@echo "Plug is downloaded. Install plugs with ':PlugInstall' from within vim. Then run 'make brew'."
 
 brew: Brewfile
