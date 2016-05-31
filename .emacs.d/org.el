@@ -36,7 +36,7 @@
 
 ;; tags
 
-(setq org-tag-alist '(("@personal" . ?p) ("@cambridge" . ?c)))
+(setq org-tag-alist '(("@me" . ?m) ("@health" . ?h) ("@cambridge" . ?c) ("@goals" . ?g)))
 
 ;; capture
 
