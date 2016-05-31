@@ -21,8 +21,13 @@
   :init (load-theme 'base16-flat-light t) ; t means it won't confirm when loading the theme
   )
 
+;; use indent guides all the time
 (use-package indent-guide
   :ensure t
   :diminish indent-guide-mode
   :init
-  (setq indent-guide-mode t))
+  (indent-guide-global-mode))
+
+;; match parentheses
+
+(turn-on-show-smartparens-mode)
