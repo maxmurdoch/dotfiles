@@ -1,7 +1,7 @@
 (require 'package)
 (setq package-enable-at-startup nil) ; don't activate packages yet
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (package-initialize)
 
