@@ -1,7 +1,7 @@
 (use-package deft
   :ensure t
   :config
-  (setq deft-default-extension "org")
+  (setq deft-default-extension "md")
   (setq deft-directory "~/notes")
   (setq deft-recursive t)
   (setq deft-use-filename-as-title t)
