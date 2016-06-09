@@ -31,3 +31,4 @@ colors
 /.emacs.d/bookmarks
 /.emacs.d/projectile-bookmarks.eld
 /.emacs.d/recentf
+/config/
