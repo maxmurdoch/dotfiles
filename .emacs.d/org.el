@@ -36,7 +36,14 @@
 
 ;; tags
 
-(setq org-tag-alist '(("@me" . ?m) ("@health" . ?h) ("@cambridge" . ?c) ("@goals" . ?g)))
+(setq org-tag-alist '(("@reading" . ?r)
+                      ("@writing" . ?w)
+                      ("@design" . ?d)
+                      ("@health" . ?h)
+                      ("@programming" . ?p)
+                      ("@productivity". ?P)
+                      ("@experience" . ?e)
+                      ("@Cambridge" . ?c)))
 
 ;; capture
 
@@ -49,9 +56,5 @@
 
 ;; pomodoro
 
-(setq org-pomodoro-audio-player "mplayer")
-(setq org-pomodoro-start-sound-args "-volume 0.3")
-(setq org-pomodoro-finished-sound-args "-volume 0.3")
-(setq org-pomodoro-short-break-sound-args "-volume 0.3")
-(setq org-pomodoro-long-break-sound-args "-volume 0.3")
-(setq org-pomodoro-killed-sound-args "-volume 0.3")
+(use-package org-pomodoro
+  :ensure t)
