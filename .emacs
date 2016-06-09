@@ -35,5 +35,6 @@
 (load "~/.emacs.d/ruby.el")
 (load "~/.emacs.d/smart-mode-line.el")
 (load "~/.emacs.d/text.el")
+(load "~/.emacs.d/typo.el")
 (load "~/.emacs.d/typography.el")
 (load "~/.emacs.d/web.el")
