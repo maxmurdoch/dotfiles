@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: hyperscript
+# key: hhh
+# --
+import h from 'react-hyperscript';
+import hh from 'hyperscript-helpers';
+
+const { $1 } = hh(h);

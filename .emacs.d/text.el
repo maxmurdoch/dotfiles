@@ -1,2 +1,1 @@
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-(add-hook 'text-mode-hook 'typo-mode)
+(add-hook 'text-mode-hook 'global-visual-line-mode)

@@ -14,13 +14,9 @@
    ("C-c C-w o" . helm-man-woman)
    ("M-g a" . helm-do-grep-ag)
    )
-  )
-
-(use-package helm-config
   :config
   (helm-mode 1)
-  (helm-adaptive-mode 1)
-  (helm-push-mark-mode 1))
+  )
 
-(use-package helm-ag
-  :ensure t)
+(use-package helm-ag)
+(use-package helm-company)

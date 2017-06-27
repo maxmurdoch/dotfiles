@@ -1,6 +1,5 @@
 ;;;; defaults
 
-(setq-default fill-column 100)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq inhibit-startup-message t)

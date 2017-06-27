@@ -18,4 +18,3 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.light.sh"
 ulimit -n 65536 65536
 
 export PATH="$HOME/.yarn/bin:$PATH"
-eval "$(direnv hook zsh)"

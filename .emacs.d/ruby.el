@@ -55,3 +55,6 @@
 (use-package rbenv
   :ensure t
   :defer t)
+
+(use-package yaml-mode
+  :ensure t)

@@ -7,10 +7,13 @@
             (set-window-margins (car (get-buffer-window-list
                                       (current-buffer) nil t)) 1 1)))
 
+(use-package rainbow-delimiters)
+(use-package typo)
+
 ;; use rainbow delimiters in all programming modes
 (add-hook 'prog-mode-hook
           (lambda ()
             (progn
               (rainbow-delimiters-mode)
-              (typo-mode -1))
-            ))
+              (flyspell-prog-mode)
+              (typo-mode -1))))

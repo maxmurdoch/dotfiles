@@ -17,8 +17,7 @@
 ;; add theme
 
 (use-package base16-theme
-  :ensure t
-  :init (load-theme 'base16-flat-light t) ; t means it won't confirm when loading the theme
+  :init (load-theme 'base16-flat t) ; t means it won't confirm when loading the theme
   )
 
 ;; use indent guides all the time
@@ -29,5 +28,9 @@
   (indent-guide-global-mode))
 
 ;; match parentheses
+(use-package smartparens
+  :init
+  (turn-on-show-smartparens-mode))
 
-(turn-on-show-smartparens-mode)
+;; rainbow delimiters
+(use-package rainbow-delimiters)

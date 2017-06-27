@@ -1,14 +1,15 @@
 (require 'package)
-(setq package-enable-at-startup nil) ; don't activate packages yet
+(setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (package-initialize)
 
+;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(require 'use-package)
+(setq use-package-always-ensure t)
 
 (load "~/.emacs.d/base.el")
 (load "~/.emacs.d/custom.el")
@@ -37,4 +38,6 @@
 (load "~/.emacs.d/text.el")
 (load "~/.emacs.d/typo.el")
 (load "~/.emacs.d/typography.el")
+(load "~/.emacs.d/visual-fill-column.el")
 (load "~/.emacs.d/web.el")
+(load "~/.emacs.d/yasnippet.el")

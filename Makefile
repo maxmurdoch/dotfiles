@@ -12,6 +12,7 @@ symlinks:
 	@ln -nsf $(PWD)/config  ~/.config
 	@ln -nsf $(PWD)/.emacs.d  ~/.emacs.d
 	@ln -nsf $(PWD)/.emacs  ~/.emacs
+	@ln -nsf $(PWD)/.eslintrc  ~/.eslintrc
 	@ln -sf $(PWD)/tmux.conf ~/.tmux.conf
 	@ln -sf $(PWD)/gitconfig ~/.gitconfig
 	@ln -sf $(PWD)/gitexcludes ~/.gitexcludes

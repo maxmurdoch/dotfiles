@@ -6,14 +6,12 @@
 [color]
     ui = auto
 [core]
-    editor = vim
+	editor = code --wait
     format = pretty
     excludesfile = ~/.gitexcludes
 [diff]
-    tool = vimdiff
-[url "git@github.com"]
-	  insteadOf = https://github.com
-[url "git@github.com:"]
-	  insteadOf = https://github.com/
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [commit]
-	template = /Users/maxmurdoch/.git-commit-template
+  template = /Users/maxmurdoch/.git-commit-template

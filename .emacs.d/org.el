@@ -5,7 +5,6 @@
   (setq-default fill-column 80)
   (typo-mode)
   (setq-default typo-language "English")
-  (flyspell-mode)
   (setq org-hide-leading-stars t)
   :bind (
          ("C-c l" . org-store-link)
@@ -38,23 +37,20 @@
 
 (setq org-tag-alist '(("@reading" . ?r)
                       ("@writing" . ?w)
+                      ("@murdoch-studio" . ?b)
                       ("@design" . ?d)
                       ("@health" . ?h)
                       ("@programming" . ?p)
                       ("@productivity". ?P)
                       ("@experience" . ?e)
-                      ("@Cambridge" . ?c)))
+                      ("@maths-builder" . ?m)
+                      ("@code-at-uni" . ?c)))
 
 ;; capture
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-capture-templates
       '(("t" "todo" entry (file "~/notes/todo.org")
-         "* todo %?\n %i\n %T\n %^G\n %l")
+         "* todo %?\n %i\n %T")
         ("j" "journal" entry (file+datetree "~/notes/journal.org")
          "* %?\nEntered on %U\n %i\n %a")))
-
-;; pomodoro
-
-(use-package org-pomodoro
-  :ensure t)

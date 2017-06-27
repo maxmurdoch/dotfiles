@@ -3,5 +3,5 @@
 
 (set-face-attribute
  'default nil
- :font "Fira Mono"
- :height 150)
+ :font "Input Mono Narrow"
+ :height 190)

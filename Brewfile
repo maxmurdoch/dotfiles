@@ -1,11 +1,11 @@
 # update
 # upgrade
 
-brew 'autoenv'
 brew 'chromedriver'
 brew 'coreutils'
+brew 'ctags'
 brew 'elasticsearch'
-brew 'emacs', args: ['with-cocoa', 'with-ctags', 'with-gnutls', 'with-imagemagick', 'with-librsvg', 'devel']
+brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-imagemagick', 'with-librsvg', 'srgb']
 brew 'findutils'
 brew 'fzf', args: ['HEAD']
 brew 'git'
@@ -34,11 +34,13 @@ brew 'zsh'
 
 tap 'caskroom/cask'
 cask '1password'
+cask 'android-file-transfer'
 cask 'alfred'
 cask 'bartender'
 cask 'calibre'
 cask 'dash'
 cask 'dropbox'
+cask 'emacs-nightly'
 cask 'fantastical'
 cask 'firefox'
 cask 'flux'
